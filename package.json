@@ -1,0 +1,30 @@
+{
+  "name": "@template/lerna",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "start:project": "npx lerna exec --scope @template/project -- npm run start",
+    "start:storybook": "npx lerna exec --scope @template/storybook -- npm run storybook",
+    "lerna:bootstrap": "npx lerna bootstrap",
+    "lerna:clean": "npx lerna clean"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lerna": "^6.0.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1"
+  }
+}
